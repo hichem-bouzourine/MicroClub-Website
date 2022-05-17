@@ -1,0 +1,358 @@
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #4b5478;
+    color: white;
+    
+}
+
+/* Typography */
+
+p{
+
+    color: white;
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+    font-family: 'inter', sans-serif;
+    line-height: 2;
+    letter-spacing: 0px;
+    font-size: 2rem;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+/* Anchors */
+
+a,a:visited{
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(73, 67, 67);
+    transition: color 0.4s ease-in-out;
+  }
+
+/* Scroll bar style */
+
+
+::-webkit-scrollbar {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #5c6896;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2a2f44;
+}
+/* Nav bar */
+
+nav {
+    top: 0;
+    left: 0;
+    z-index: 9;
+    border: 0.001px solid #4b5478;
+    height: 12rem;
+}
+
+.nav-logo {
+    float: left;
+    height: 8rem;
+    width: 14rem;
+    text-align: center;
+    margin-left: 1.8rem;
+}
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    justify-items: center;
+    font-size: 2.3rem;
+    list-style: none;
+    /* top: 0; */
+}
+
+nav ul li {
+    margin: 2.3rem 2rem;
+}
+
+/* Main */
+main {
+    background-image: url(/images/grid-repeat.webp);
+    background-repeat: repeat;
+    animation: animatedBackground 18s linear infinite alternate;
+}
+
+@keyframes animatedBackground {
+    from{
+        background-position: 0 0;
+    }
+    to {
+        background-position: 50% 50%;
+    }
+}
+
+
+/* Button */
+
+input {
+    font-size: 2rem;
+}
+
+.btn--shadow {
+    width:16rem;
+    height: 6rem;
+    border: 2px solid white;
+    border-radius: 1rem;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    position: relative;
+}
+.btn--shadow:hover{
+    background-color: white;
+    color: black;
+    transition: 1s ease;
+}
+
+.btn--shadow::before{
+    content: '';
+    position: absolute;
+    background: transparent;
+    height: 50%;
+    width: 100%;
+    transform: perspective(1em) rotateX(40deg) scale(1,0.35);
+    filter: blur(8px);
+    transition: 1s ease;
+}
+
+.btn--shadow:hover::before{
+    background: white;
+
+}
+
+
+/* Definition section */
+
+.row {
+    display: flex;
+    margin-left: 15rem;
+    margin-right: 15rem;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.aling-items-center {
+    align-items: center;
+}
+
+.definition {
+    margin-top: 7rem;
+}
+
+.definition__text h1{
+    font-size: 6rem;
+    color: white;
+}
+
+.definition__text p {
+    font-size: 2rem;
+}
+
+.definition__logo{
+    width: 85rem;
+    height: 30rem;
+    margin-left: 5rem;
+}
+
+/* Sections */
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 6rem 30rem;
+}
+
+section h2 , footer h2{
+    text-align: center;
+    font-size: 3rem;
+}
+
+/* About us */
+
+.abt__image .img1 img{
+    width: 40rem;
+    height: 27rem;
+    animation: fade 25s infinite;
+    border: 1.3rem solid white;
+}
+
+.abt__image .img2 img{
+    width: 40rem;
+    height: 27rem;
+    margin-top: -5rem;
+    margin-left: -4rem;
+    margin-bottom: 3rem;
+    animation: fade 25s infinite;
+    border: 1.3rem solid white;
+    transform: rotate(-6deg);
+}
+
+.abt__description {
+    margin-left: 5rem;
+}
+
+/* Events */
+
+#events {
+    display: block;
+    margin: 6rem 37.5rem;
+}
+
+.double-container {
+    display:flex ;
+    flex-direction: row;
+    margin: 3rem 0;
+}
+
+.double-container .ev1 {
+    margin-right: 3rem;
+}
+
+.double-container .ev2 {
+    margin-left: 3rem;
+}
+
+.ev1, .ev2 {
+    width: 55rem;
+}
+
+#events img {
+    width: 55rem;
+    height: 25rem;
+    border-radius: 0.9rem;
+}
+
+
+.ev-description p {
+    font-size: 1.6rem;
+    line-height: 1.4;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+
+
+/* Partners section */
+
+#partners {
+    width: 130rem;
+    height: 40rem;
+    overflow: hidden;
+    display: block;
+    /* border: dodgerblue solid 3px; */
+}
+
+.partners__showcase {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    animation: animatedShowcase 15s linear infinite alternate ,animatedShowcase2 15s linear infinite alternate-reverse ;
+}
+
+.child {
+    width: 17.5rem;
+    height: 17.5rem;
+    background-color: white;
+    margin: 1rem 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.child img {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+}
+
+@keyframes animatedShowcase {
+    to {
+        transform: translate3d(60rem,0,0);
+    }
+}
+
+@keyframes animatedShowcase2 {
+    to {
+        transform: translate3d(-60rem,0,0);
+    }
+}
+
+
+/* Support us */
+
+#support {
+    display: block;
+    margin: 6rem 20rem;
+}
+
+.support-container {
+    display: flex;
+}
+
+.support-container p {
+    width: 35rem;
+}
+
+.mapouter {
+    position: relative;
+    text-align: right;
+    height: 40rem;
+    width: 90rem;
+}
+
+.gmap_canvas iframe {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    background: none !important;
+    height: 40rem;
+    width: 90rem;
+}
+
+/* Media */
+
+#media {
+    background-color: #7b8dd5;
+}
+
+#media ul {
+    height: 9rem;
+    display: flex;
+    flex-direction: row ;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.4rem;
+    color:rgb(0, 0, 0);
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.media__node {
+    margin: 1rem 2rem;
+}
+
+.media__node img {
+    transform: scale(2);
+}
