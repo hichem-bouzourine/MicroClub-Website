@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="MicroClub">
+    <serverData>
+      <paths name="MicroClub">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="microclub.org" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

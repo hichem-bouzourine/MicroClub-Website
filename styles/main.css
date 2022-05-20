@@ -118,7 +118,7 @@ input {
 .btn--shadow:hover{
     background-color: white;
     color: black;
-    transition: 1s ease;
+    transition: 360ms ease;
 }
 
 .btn--shadow::before{
@@ -355,4 +355,70 @@ section h2 , footer h2{
 
 .media__node img {
     transform: scale(2);
+}
+
+/* Forms */
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 200%;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 8rem 0;
+}
+
+.input-container label {
+    display: block;
+    font-size: 2.4rem;
+    padding-left: 1rem;
+    border: 0;
+}
+
+.input-container input {
+    width: 70rem;
+    height: 3.4rem;
+    border-radius: 0.7rem;
+    margin: 1rem 0;
+    border: 0;
+}
+
+.input-container input:focus {
+    outline-width: 0;
+}
+
+.input-container input::placeholder {
+    padding: 1rem;
+}
+
+.inline {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.inline input {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+}
+
+.input-container datalist option{
+    width: 70rem;
+}
+
+.btn-form {
+    width: 14rem;
+    height: 4rem;
+    border: 0;
+    border-radius: 4rem;
+    text-transform: uppercase;
+    margin: 2rem;
+}
+
+.btn-form:hover {
+    background-color:#5c6896 ;
+    transition: 420ms;
 }
