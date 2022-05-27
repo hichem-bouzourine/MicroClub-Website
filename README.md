@@ -1,3 +1,4 @@
 # MicroClub-Website
 
-# Both the back-end and the mobile approach will be finished by "May 24 2022"
+    Clone this repo in your machine,
+    install php 7.4, install Mysql server or PhpMyAdmin.
