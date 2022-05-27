@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    background-color: #6998AB;
+    background-color: #1f5264;
     color: white;
     
 }
@@ -45,11 +45,11 @@ a:hover {
 
 
 ::-webkit-scrollbar {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.4rem;
+    height: 1.4rem;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: #5c6896;
+    background-color: #2e3550;
     border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -61,12 +61,12 @@ nav {
     top: 0; 
     left: 0; 
     z-index: 1; 
-    border: 0.001px solid #6a8da5; 
+    border: 0.001px solid #0e2839; 
     height: 10rem; 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
     position: fixed; 
     width: 100%; 
-    background-color: #6a8da5; 
+    background-color: #0e2839; 
      
 }
 
@@ -237,31 +237,35 @@ section h2 , footer h2{
 
 /* Events */
 
-#events {
+#events , #memories{
     display: block;
     margin: 6rem 37.5rem;
 }
 
-.double-container {
+.double-container ,.triple-container {
     display:flex ;
     flex-direction: row;
     margin: 3rem 0;
 }
 
-.double-container .ev1 {
+.double-container div , .triple-container div{
     margin-right: 3rem;
-}
-
-.double-container .ev2 {
-    margin-left: 3rem;
-}
-
-.ev1, .ev2 {
     width: 55rem;
 }
 
 #events img {
     width: 55rem;
+    height: 25rem;
+    border-radius: 0.9rem;
+}
+
+#memories h3 {
+    text-align: center;
+    font-family:sans-serif;
+}
+
+#memories img {
+    width: 35rem;
     height: 25rem;
     border-radius: 0.9rem;
 }
@@ -323,7 +327,20 @@ section h2 , footer h2{
     }
 }
 
+/* Club Structure */
 
+#structure {
+    display: block;
+}
+
+.structure__container {
+    text-align: center;
+}
+
+.structure__container img {
+    border-radius: 1.4rem;
+    size: 130%;
+}
 /* Support us */
 
 #support {
@@ -357,7 +374,7 @@ section h2 , footer h2{
 /* Media */
 
 #media {
-    background-color: #3f7085;
+    background-color: #0e2839;
 }
 
 #media ul {
@@ -429,8 +446,17 @@ form {
     outline-width: 0;
 }
 
-.input-container input::placeholder {
-    padding: 1rem;
+.input-container input::placeholder { 
+    padding: 1rem; 
+    padding-left: 2rem; 
+    opacity: 50%; 
+} 
+
+.input-container #Birthday{ 
+    width: 3rem;
+    opacity: 70%; 
+    color: gray;    
+     
 }
 
 .inline {
@@ -450,18 +476,20 @@ form {
     width: 70rem;
 }
 
-.btn-form {
-    width: 14rem;
-    height: 4rem;
-    border: 0;
-    border-radius: 4rem;
-    text-transform: uppercase;
-    margin: 2rem;
-}
-
-.btn-form:hover {
-    background-color:#5c6896 ;
-    transition: 420ms;
+.btn-form { 
+    width: 14rem; 
+    height: 4rem; 
+    border: 0; 
+    border-radius: 4rem; 
+    text-transform: uppercase; 
+    margin: 2rem; 
+    color: rgb(99, 96, 96); 
+} 
+ 
+.btn-form:hover { 
+    background-color:#5c6896 ; 
+    transition: 420ms; 
+    color: #fff; 
 }
 
 .red {
@@ -471,6 +499,10 @@ form {
 
 @media only screen and (max-width: 768px){
     
+    html{
+        font-size: 40%;
+    }
+
     .definition{
         position: relative;
     }
@@ -492,7 +524,7 @@ form {
         width: 100%;
     }
       
-       section {
+    section {
         display: block;
         justify-content: center;
         margin: auto;
@@ -518,26 +550,33 @@ form {
     
 /* Events */
 
-#events {
-    width: auto;
-    margin: 6rem 20%;
-}
-
 .double-container {
     display: block;
 
 }
 
-.double-container .ev1 {
-    margin-right: auto;
+
+#events img {
+    width: 55rem;
+    height: 25rem;
+    border-radius: 0.9rem;
+    margin: 0 2rem;
 }
 
-.double-container .ev2 {
-    margin-left: auto;
+#events , #memories{
+    display: block;
+    margin: 6rem 37.5rem;
 }
 
-.ev1, .ev2 {
-    width: 100%;
+.double-container ,.triple-container {
+    display:flex ;
+    flex-direction: row;
+    margin: 3rem 0;
+}
+
+.double-container div , .triple-container div{
+    margin-right: 3rem;
+    width: 55rem;
 }
 
 #events img {
@@ -546,6 +585,16 @@ form {
     border-radius: 0.9rem;
 }
 
+#memories h3 {
+    text-align: center;
+    font-family:sans-serif;
+}
+
+#memories img {
+    width: 35rem;
+    height: 25rem;
+    border-radius: 0.9rem;
+}
 
 .ev-description p{
     font-size: 1.6rem;

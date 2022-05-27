@@ -125,6 +125,13 @@
                 </div>
             </div>
         </section>
+
+        <section id="structure">
+            <div class="structure__container">
+                <img src="images/structure.png">
+            </div>
+        </section>
+
     </main>
 
     <?php require 'Components/footer.php'; ?>

@@ -153,6 +153,53 @@
                 </div>
             </div>
         </section>
+
+        <section id="memories">
+            <h2>Memories</h2>
+            <div class="triple-container">
+                <div class="ev1">
+                    <img src="../images/pic1.JPG" alt="MC Hacktober" />
+                    <h3>MC Winter Hack</h3>
+                </div>
+                <div class="ev2">
+                    <img src="../images/pic2.JPG" alt="Local hack day" />
+                    <h3>Major League Hacking</h3>
+                </div>
+                <div class="ev3">
+                    <img src="../images/pic3.JPG" alt="MC Hacktober" />
+                    <h3>MC Winter Hack</h3>
+                </div>
+            </div>
+            <div class="triple-container">
+                <div class="ev1">
+                    <img src="../images/pic4.JPG" alt="MC Hacktober" />
+                    <h3>MC Local Hack</h3>
+                </div>
+                <div class="ev2">
+                    <img src="../images/pic5.jpg" alt="Local hack day" />
+                    <h3>Algeria disrupt</h3>
+                </div>
+                <div class="ev3">
+                    <img src="../images/pic6.JPG" alt="MC Hacktober" />
+                    <h3>Red Hat Training camp</h3>
+                </div>
+            </div>
+            <div class="triple-container">
+                <div class="ev1">
+                    <img src="../images/pic7.JPG" alt="MC Hacktober" />
+                    <h3>MC Winter Hack</h3>
+                </div>
+                <div class="ev2">
+                    <img src="../images/pic8.JPG" alt="Local hack day" />
+                    <h3>Hacktober</h3>
+                </div>
+                <div class="ev3">
+                    <img src="../images/pic9.JPG" alt="MC Hacktober" />
+                    <h3>MC Winter Hack</h3>
+                </div>
+            </div>
+
+        </section>
     </main>
 
     <?php
