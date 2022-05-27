@@ -357,7 +357,7 @@ section h2 , footer h2{
 /* Media */
 
 #media {
-    background-color: #7b8dd5;
+    background-color: #3f7085;
 }
 
 #media ul {
@@ -469,7 +469,7 @@ form {
     font-weight: bolder;
 }
 
-@media only screen and (max-width: 1000px){
+@media only screen and (max-width: 768px){
     
     .definition{
         position: relative;

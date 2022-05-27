@@ -1,4 +1,7 @@
 <?php
+
+include '../config/db_connect.php';
+
 $first_name = $last_name = $email = $birthday = $university = $level = $password = '';
 $errors = array('first_name' => '', 'last_name' => '', 'password' => '');
 
@@ -11,15 +14,54 @@ if (isset($_POST['submit'])) {
     $level = $_POST['level'];
     $university = $_POST['university'];
 
+    // Verification du champs de password
+    $password1 = $_POST['password'];
+    $password2 = $_POST['confirm-password'];
 
-    if (!preg_match('/^[a-aA-Z]+$/', 'first-name')) {
+    if ($password1 != $password2) {
+        $errors['password'] = "You've entered a different passwords";
+    }
+
+    // le nom et le prénom ne doit pas contenir des caractères spéciaux !
+    if (!preg_match('/^[a-zA-Z]+$/', $first_name)) {
         $errors['first_name'] = 'Please enter a valid name.';
         $errors['password'] = 'Please re-write your password.';
     }
-    if (!preg_match('/^[a-aA-Z]+$/', 'last-name')) {
-        $errors['first_name'] = 'Please enter a valid surname.';
+    if (!preg_match('/^[a-zA-Z]+$/', $last_name)) {
+        $errors['last_name'] = 'Please enter a valid surname.';
         $errors['password'] = 'Please re-write your password.';
     }
+
+    if (!(array_filter($errors))) {
+        $first_name = mysqli_real_escape_string($conn, $_POST['first-name']);
+        $last_name = mysqli_real_escape_string($conn, $_POST['last-name']);
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $password = mysqli_real_escape_string($conn, $_POST['password']);
+        $birthday = mysqli_real_escape_string($conn, $_POST['birthday']);
+        $level = mysqli_real_escape_string($conn, $_POST['level']);
+        $university = mysqli_real_escape_string($conn, $_POST['university']);
+
+        // la requete
+        $sql = "INSERT INTO members (first_name, last_name, email, password, birthdate, level, university) VALUES ('$first_name', '$last_name', '$email', '$password', '$birthday', '$level', '$university') ";
+        // Sauvegarder & check
+        if (mysqli_query($conn, $sql)) {
+
+            $to = $email;
+            $subject = "Email verification";
+            $message = "Hello mister $name\nWe glad to confirm this registration \r\n";
+            $headers = "From: boiteprojet2022@gmail.com";
+            $headers .= "MIME-Version: 1.0" . "\r\n";
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+            mail($to, $subject, $message, $headers);
+
+            header('Location: ../index.php');
+        } else {
+            echo 'Query error' . mysqli_error($conn);
+        }
+    }
+
+    mysqli_close($conn);
 }
 
 ?>
@@ -70,17 +112,17 @@ if (isset($_POST['submit'])) {
             <form action="Signup.php" method="POST">
                 <div class="input-container">
                     <label for="first-name">First name</label>
-                    <input type="text" name="first-name" id="first-name" minlength="3" maxlength="25" placeholder="What's your name?" autofocus required value="<?php echo $first_name ?>" />
+                    <input type="text" name="first-name" id="first-name" minlength="3" maxlength="25" placeholder="What's your name?" autofocus required value="<?php echo htmlspecialchars($first_name) ?>" />
                     <div class="red"><?php echo $errors['first_name']; ?></div>
                 </div>
                 <div class="input-container">
                     <label for="last-name">Last name</label>
-                    <input type="text" name="last-name" id="last-name" minlength="3" maxlength="25" placeholder="what about ur family name?" required value="<?php echo $last_name ?>" />
+                    <input type="text" name="last-name" id="last-name" minlength="3" maxlength="25" placeholder="what about ur family's name?" required value="<?php echo htmlspecialchars($last_name) ?>" />
                     <div class="red"><?php echo $errors['last_name']; ?></div>
                 </div>
                 <div class="input-container">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" minlength="12" maxlength="40" placeholder="Your Email please..." required value="<?php echo $email ?>" />
+                    <input type="email" name="email" id="email" minlength="12" maxlength="40" placeholder="Your Email please..." required value="<?php echo htmlspecialchars($email) ?>" />
                 </div>
                 <div class="input-container">
                     <label for="password">Password</label>
@@ -90,10 +132,11 @@ if (isset($_POST['submit'])) {
                 <div class="input-container">
                     <label for="confirm-password">Repeate password</label>
                     <input type="password" name="confirm-password" id="confirm-password" minlength="8" maxlength="30" placeholder="Make sure it's unbeatable!" required />
+                    <div class="red"> <?php echo $errors['password'] ?> </div>
                 </div>
                 <div class="input-container">
                     <label for="birthday">Birthday</label>
-                    <input type="date" name="birthday" id="birthday" required value="<?php echo $birthday ?>" />
+                    <input type="date" name="birthday" id="birthday" size="40" required value="<?php echo $birthday ?>" />
                 </div>
                 <div class="input-container">
                     <label for="level">Level</label>

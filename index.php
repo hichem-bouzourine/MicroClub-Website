@@ -78,8 +78,6 @@
             </div>
         </section>
 
-        <section id="visions"></section>
-
         <section id="partners">
             <h2>Partners</h2>
             <div class="partners__showcase">
